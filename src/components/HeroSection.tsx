@@ -1,25 +1,6 @@
-import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
-import { Canvas } from '@react-three/fiber'
-import { OrbitControls, Sphere, MeshDistortMaterial } from '@react-three/drei'
 import { ArrowDown, Flame, Zap, Settings, Award } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-
-// Simple Three.js Animated Sphere Component
-function AnimatedSphere() {
-  return (
-    <Sphere args={[1, 32, 32]} scale={2.5}>
-      <MeshDistortMaterial
-        color="#ff6b35"
-        attach="material"
-        distort={0.3}
-        speed={1.5}
-        roughness={0.2}
-        metalness={0.8}
-      />
-    </Sphere>
-  )
-}
 
 export default function HeroSection() {
   const scrollToSection = (sectionId: string) => {
@@ -31,20 +12,30 @@ export default function HeroSection() {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Three.js Background */}
-      <div className="absolute inset-0 opacity-30">
-        <Canvas camera={{ position: [0, 0, 5] }}>
-          <ambientLight intensity={0.5} />
-          <directionalLight position={[10, 10, 5]} intensity={1} />
-          <AnimatedSphere />
-          <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={0.5} />
-        </Canvas>
-      </div>
-
-      {/* Background Effects */}
+      {/* Animated CSS Background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-background via-background/95 to-background/90" />
         <div className="absolute inset-0 bg-gradient-to-r from-molten/5 via-transparent to-plasma/5" />
+        
+        {/* Animated Geometric Shapes */}
+        <div className="absolute inset-0 opacity-20">
+          <motion.div
+            className="absolute top-1/4 left-1/4 w-32 h-32 bg-gradient-heat rounded-full blur-xl"
+            animate={{
+              scale: [1, 1.2, 1],
+              opacity: [0.3, 0.6, 0.3],
+            }}
+            transition={{ duration: 4, repeat: Infinity }}
+          />
+          <motion.div
+            className="absolute top-3/4 right-1/4 w-24 h-24 bg-gradient-tech rounded-full blur-lg"
+            animate={{
+              scale: [1, 1.5, 1],
+              opacity: [0.2, 0.5, 0.2],
+            }}
+            transition={{ duration: 3, repeat: Infinity, delay: 1 }}
+          />
+        </div>
         
         {/* Animated Grid */}
         <div className="absolute inset-0 opacity-20">
