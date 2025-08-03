@@ -5,15 +5,15 @@ import { OrbitControls, Sphere, MeshDistortMaterial } from '@react-three/drei'
 import { ArrowDown, Flame, Zap, Settings, Award } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
-// Three.js Animated Sphere Component
+// Simple Three.js Animated Sphere Component
 function AnimatedSphere() {
   return (
-    <Sphere visible args={[1, 100, 200]} scale={2.5}>
+    <Sphere args={[1, 32, 32]} scale={2.5}>
       <MeshDistortMaterial
         color="#ff6b35"
         attach="material"
-        distort={0.5}
-        speed={2}
+        distort={0.3}
+        speed={1.5}
         roughness={0.2}
         metalness={0.8}
       />
