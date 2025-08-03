@@ -1,14 +1,56 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState, useEffect } from 'react'
+import Preloader from '@/components/Preloader'
+import Navigation from '@/components/Navigation'
+import HeroSection from '@/components/HeroSection'
+import AboutSection from '@/components/AboutSection'
+import ServicesSection from '@/components/ServicesSection'
+import ProcessSection from '@/components/ProcessSection'
+import TeamSection from '@/components/TeamSection'
+import ContactSection from '@/components/ContactSection'
+import Footer from '@/components/Footer'
 
 const Index = () => {
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
-  );
-};
+  const [isLoading, setIsLoading] = useState(true)
 
-export default Index;
+  const handlePreloaderComplete = () => {
+    setIsLoading(false)
+  }
+
+  return (
+    <div className="min-h-screen bg-background text-foreground">
+      {/* Preloader */}
+      {isLoading && <Preloader onComplete={handlePreloaderComplete} />}
+      
+      {/* Main Website Content */}
+      {!isLoading && (
+        <>
+          {/* Navigation */}
+          <Navigation />
+          
+          {/* Hero Section */}
+          <HeroSection />
+          
+          {/* About Section */}
+          <AboutSection />
+          
+          {/* Services Section */}
+          <ServicesSection />
+          
+          {/* Process Section */}
+          <ProcessSection />
+          
+          {/* Team Section */}
+          <TeamSection />
+          
+          {/* Contact Section */}
+          <ContactSection />
+          
+          {/* Footer */}
+          <Footer />
+        </>
+      )}
+    </div>
+  )
+}
+
+export default Index

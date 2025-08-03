@@ -61,7 +61,33 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Industrial Heat Treatment Color Extensions
+				steel: {
+					blue: 'hsl(var(--steel-blue))',
+					DEFAULT: 'hsl(var(--chrome-silver))'
+				},
+				molten: 'hsl(var(--molten-orange))',
+				furnace: 'hsl(var(--furnace-red))',
+				chrome: 'hsl(var(--chrome-silver))',
+				gold: 'hsl(var(--gold-accent))',
+				plasma: 'hsl(var(--plasma-cyan))'
+			},
+			fontFamily: {
+				inter: ['Inter', 'sans-serif'],
+				orbitron: ['Orbitron', 'monospace']
+			},
+			backgroundImage: {
+				'gradient-heat': 'var(--gradient-heat)',
+				'gradient-steel': 'var(--gradient-steel)',
+				'gradient-tech': 'var(--gradient-tech)',
+				'gradient-chrome': 'var(--gradient-chrome)'
+			},
+			boxShadow: {
+				'heat': 'var(--shadow-heat)',
+				'steel': 'var(--shadow-steel)',
+				'glow': 'var(--shadow-glow)',
+				'tech': 'var(--shadow-tech)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +110,47 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'heat-pulse': {
+					'0%, 100%': {
+						boxShadow: '0 0 20px hsl(18 95% 55% / 0.3)'
+					},
+					'50%': {
+						boxShadow: '0 0 40px hsl(18 95% 55% / 0.6), 0 0 60px hsl(0 90% 45% / 0.3)'
+					}
+				},
+				'float': {
+					'0%, 100%': {
+						transform: 'translateY(0px)'
+					},
+					'50%': {
+						transform: 'translateY(-10px)'
+					}
+				},
+				'glow': {
+					'from': {
+						boxShadow: '0 0 20px hsl(18 95% 55% / 0.4)'
+					},
+					'to': {
+						boxShadow: '0 0 40px hsl(18 95% 55% / 0.8), 0 0 60px hsl(0 90% 45% / 0.4)'
+					}
+				},
+				'rotate-slow': {
+					'from': {
+						transform: 'rotate(0deg)'
+					},
+					'to': {
+						transform: 'rotate(360deg)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'heat-pulse': 'heat-pulse 2s infinite',
+				'float': 'float 3s ease-in-out infinite',
+				'glow': 'glow 2s ease-in-out infinite alternate',
+				'rotate-slow': 'rotate-slow 20s linear infinite'
 			}
 		}
 	},
