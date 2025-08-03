@@ -5,6 +5,7 @@ import HeroSection from '@/components/HeroSection'
 import AboutSection from '@/components/AboutSection'
 import ServicesSection from '@/components/ServicesSection'
 import ProcessSection from '@/components/ProcessSection'
+import FacilitiesSection from '@/components/FacilitiesSection'
 import TeamSection from '@/components/TeamSection'
 import ContactSection from '@/components/ContactSection'
 import Footer from '@/components/Footer'
@@ -38,6 +39,9 @@ const Index = () => {
           
           {/* Process Section */}
           <ProcessSection />
+          
+          {/* Facilities Section */}
+          <FacilitiesSection />
           
           {/* Team Section */}
           <TeamSection />
