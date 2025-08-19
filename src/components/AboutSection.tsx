@@ -30,7 +30,7 @@ export default function AboutSection() {
       {/* Background Effects */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/20 to-background" />
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-molten/30 to-transparent" />
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -174,14 +174,14 @@ export default function AboutSection() {
               </div>
               <div className="grid grid-cols-2 gap-4 text-muted-foreground">
                 <div className="space-y-2">
-                  <p className="font-semibold text-molten">• Quality First</p>
-                  <p className="font-semibold text-plasma">• Innovation</p>
-                  <p className="font-semibold text-chrome">• Reliability</p>
+                  <p className="font-semibold text-primary">• Quality First</p>
+                  <p className="font-semibold text-accent">• Innovation</p>
+                  <p className="font-semibold text-foreground">• Reliability</p>
                 </div>
                 <div className="space-y-2">
-                  <p className="font-semibold text-molten">• Precision</p>
-                  <p className="font-semibold text-plasma">• Integrity</p>
-                  <p className="font-semibold text-chrome">• Excellence</p>
+                  <p className="font-semibold text-primary">• Precision</p>
+                  <p className="font-semibold text-accent">• Integrity</p>
+                  <p className="font-semibold text-foreground">• Excellence</p>
                 </div>
               </div>
             </motion.div>

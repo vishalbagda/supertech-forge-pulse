@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Flame, Phone, Mail, MapPin } from 'lucide-react'
+import { Menu, X, Flame, Phone, Mail, MapPin, Sun, Moon } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { useTheme } from '@/hooks/useTheme'
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const { theme, toggleTheme } = useTheme()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,8 +55,8 @@ export default function Navigation() {
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
             >
               <div className="relative">
-                <Flame className="w-8 h-8 text-molten animate-heat-pulse" />
-                <div className="absolute inset-0 w-8 h-8 bg-molten/20 rounded-full animate-ping" />
+                <Flame className="w-8 h-8 text-primary animate-heat-pulse" />
+                <div className="absolute inset-0 w-8 h-8 bg-primary/20 rounded-full animate-ping" />
               </div>
               <div>
                 <h2 className="text-xl font-orbitron font-bold text-gradient-heat">
@@ -72,7 +74,7 @@ export default function Navigation() {
                 <motion.button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
-                  className="relative text-foreground hover:text-molten transition-colors duration-300 font-inter"
+                  className="relative text-foreground hover:text-primary transition-colors duration-300 font-inter"
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
@@ -89,7 +91,7 @@ export default function Navigation() {
               ))}
             </div>
 
-            {/* Contact Info & CTA */}
+            {/* Contact Info & Theme Toggle & CTA */}
             <div className="hidden lg:flex items-center space-x-4">
               <div className="flex items-center space-x-4 text-sm text-muted-foreground">
                 <div className="flex items-center space-x-1">
@@ -97,20 +99,51 @@ export default function Navigation() {
                   <span>+91 9822146862</span>
                 </div>
               </div>
+              
+              {/* Theme Toggle */}
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={toggleTheme}
+                className="w-9 h-9 rounded-full hover:bg-secondary"
+              >
+                {theme === 'light' ? (
+                  <Moon className="h-4 w-4" />
+                ) : (
+                  <Sun className="h-4 w-4" />
+                )}
+              </Button>
+
               <Button variant="heat" size="sm">
                 Get Quote
               </Button>
             </div>
 
-            {/* Mobile Menu Button */}
-            <Button
-              variant="ghost"
-              size="icon"
-              className="lg:hidden"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            >
-              {isMobileMenuOpen ? <X /> : <Menu />}
-            </Button>
+            {/* Mobile Menu & Theme Toggle */}
+            <div className="flex items-center space-x-2 lg:hidden">
+              {/* Theme Toggle for Mobile */}
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={toggleTheme}
+                className="w-9 h-9 rounded-full hover:bg-secondary"
+              >
+                {theme === 'light' ? (
+                  <Moon className="h-4 w-4" />
+                ) : (
+                  <Sun className="h-4 w-4" />
+                )}
+              </Button>
+
+              {/* Mobile Menu Button */}
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              >
+                {isMobileMenuOpen ? <X /> : <Menu />}
+              </Button>
+            </div>
           </div>
         </div>
       </motion.nav>
@@ -145,7 +178,7 @@ export default function Navigation() {
                 <motion.button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-2xl font-orbitron font-medium text-foreground hover:text-molten transition-colors"
+                  className="text-2xl font-orbitron font-medium text-foreground hover:text-primary transition-colors"
                   initial={{ y: 30, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: index * 0.1 }}

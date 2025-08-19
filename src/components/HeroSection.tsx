@@ -15,7 +15,7 @@ export default function HeroSection() {
       {/* Animated CSS Background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-background via-background/95 to-background/90" />
-        <div className="absolute inset-0 bg-gradient-to-r from-molten/5 via-transparent to-plasma/5" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-accent/5" />
         
         {/* Animated Geometric Shapes */}
         <div className="absolute inset-0 opacity-20">
@@ -50,12 +50,12 @@ export default function HeroSection() {
             key={i}
             className="absolute"
             initial={{
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
+              x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1920),
+              y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1080),
             }}
             animate={{
-              x: [null, Math.random() * window.innerWidth],
-              y: [null, Math.random() * window.innerHeight],
+              x: [null, Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1920)],
+              y: [null, Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1080)],
             }}
             transition={{
               duration: 20 + Math.random() * 10,
@@ -64,7 +64,7 @@ export default function HeroSection() {
               ease: "linear"
             }}
           >
-            <div className="w-2 h-2 bg-molten/40 rounded-full animate-pulse" />
+            <div className="w-2 h-2 bg-primary/40 rounded-full animate-pulse" />
           </motion.div>
         ))}
       </div>
@@ -98,7 +98,7 @@ export default function HeroSection() {
                 }}
                 transition={{ duration: 2, repeat: Infinity }}
               >
-                <Flame className="w-16 h-16 text-molten" />
+                <Flame className="w-16 h-16 text-primary" />
               </motion.div>
               <motion.div
                 animate={{ 
@@ -107,7 +107,7 @@ export default function HeroSection() {
                 }}
                 transition={{ duration: 1.5, repeat: Infinity }}
               >
-                <Zap className="w-12 h-12 text-plasma" />
+                <Zap className="w-12 h-12 text-accent" />
               </motion.div>
             </div>
 
@@ -149,7 +149,7 @@ export default function HeroSection() {
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
-                <feature.icon className="w-8 h-8 text-molten mx-auto mb-3" />
+                <feature.icon className="w-8 h-8 text-primary mx-auto mb-3" />
                 <p className="text-sm font-inter text-muted-foreground">{feature.text}</p>
               </motion.div>
             ))}

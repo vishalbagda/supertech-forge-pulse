@@ -40,7 +40,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
           {/* Background Pattern */}
           <div className="absolute inset-0 opacity-10">
             <div className="absolute inset-0 bg-gradient-steel" />
-            <div className="absolute inset-0 bg-gradient-to-br from-molten/20 via-transparent to-plasma/20" />
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20" />
           </div>
 
           <div className="relative z-10 text-center">
@@ -74,7 +74,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
                 transition={{ duration: 2, repeat: Infinity }}
               >
                 <div className="relative">
-                  <Flame className="w-16 h-16 text-molten" />
+                  <Flame className="w-16 h-16 text-primary" />
                   <motion.div
                     className="absolute -top-2 -right-2"
                     animate={{ 
@@ -83,7 +83,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
                     }}
                     transition={{ duration: 1.5, repeat: Infinity }}
                   >
-                    <Zap className="w-8 h-8 text-plasma" />
+                    <Zap className="w-8 h-8 text-accent" />
                   </motion.div>
                 </div>
               </motion.div>
@@ -134,10 +134,10 @@ export default function Preloader({ onComplete }: PreloaderProps) {
               {[...Array(6)].map((_, i) => (
                 <motion.div
                   key={i}
-                  className="absolute w-2 h-2 bg-molten rounded-full"
+                  className="absolute w-2 h-2 bg-primary rounded-full"
                   initial={{ 
-                    x: Math.random() * window.innerWidth,
-                    y: window.innerHeight,
+                    x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1920),
+                    y: typeof window !== 'undefined' ? window.innerHeight : 1080,
                     opacity: 0 
                   }}
                   animate={{
