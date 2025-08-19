@@ -4,36 +4,36 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Supertech Heat Treatment Design System - Industrial Metallurgy Theme */
+/* Give Water a Voice with GenAI - Water Pollution Reporting System */
 
 @layer base {
   :root {
-    /* Core Brand Colors - Clean White Theme */
+    /* Light Mode - Water Theme */
     --background: 0 0% 100%;
-    --foreground: 222 47% 11%;
+    --foreground: 212 20% 15%;
     
-    /* Card System - Pure White with Subtle Shadows */
+    /* Card System */
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card-foreground: 212 20% 15%;
     
     /* Interactive Elements */
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
+    --popover-foreground: 212 20% 15%;
     
-    /* Primary - Modern Orange Accent */
-    --primary: 18 95% 55%;
+    /* Primary - Water Blue */
+    --primary: 217 91% 60%;
     --primary-foreground: 0 0% 100%;
     
     /* Secondary - Light Gray */
-    --secondary: 210 20% 98%;
-    --secondary-foreground: 222 47% 11%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 212 20% 15%;
     
     /* Muted - Soft Gray */
-    --muted: 210 20% 96%;
-    --muted-foreground: 215 16% 47%;
+    --muted: 210 40% 94%;
+    --muted-foreground: 215 16% 46%;
     
-    /* Accent - Electric Blue Tech */
-    --accent: 195 100% 50%;
+    /* Accent - Ocean Blue */
+    --accent: 200 95% 55%;
     --accent-foreground: 0 0% 100%;
     
     /* Destructive */
@@ -41,29 +41,29 @@
     --destructive-foreground: 0 0% 100%;
     
     /* Borders and Inputs */
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 18 95% 55%;
+    --border: 214 32% 88%;
+    --input: 214 32% 94%;
+    --ring: 217 91% 60%;
     
-    /* Metallurgy Color Palette */
-    --steel-blue: 210 30% 25%;
-    --molten-orange: 18 95% 55%;
-    --furnace-red: 0 90% 45%;
-    --chrome-silver: 210 15% 75%;
-    --gold-accent: 45 95% 55%;
-    --plasma-cyan: 180 100% 50%;
+    /* Water Theme Color Palette */
+    --ocean-blue: 217 91% 60%;
+    --deep-water: 220 70% 40%;
+    --wave-blue: 200 95% 55%;
+    --fresh-water: 190 85% 65%;
+    --water-foam: 200 20% 90%;
+    --aqua-green: 175 60% 50%;
     
-    /* Advanced Gradients - Light Theme */
-    --gradient-heat: linear-gradient(135deg, hsl(0 90% 45%), hsl(18 95% 55%), hsl(45 95% 55%));
-    --gradient-steel: linear-gradient(135deg, hsl(210 20% 90%), hsl(210 20% 95%), hsl(0 0% 100%));
-    --gradient-tech: linear-gradient(135deg, hsl(195 100% 50%), hsl(210 50% 85%), hsl(220 30% 95%));
-    --gradient-chrome: linear-gradient(135deg, hsl(210 15% 85%), hsl(210 15% 90%), hsl(210 15% 95%));
+    /* Water Gradients */
+    --gradient-water: linear-gradient(135deg, hsl(217 91% 60%), hsl(200 95% 55%), hsl(190 85% 65%));
+    --gradient-ocean: linear-gradient(135deg, hsl(220 70% 40%), hsl(217 91% 60%), hsl(200 95% 55%));
+    --gradient-clean: linear-gradient(135deg, hsl(210 40% 96%), hsl(200 20% 90%), hsl(0 0% 100%));
+    --gradient-aqua: linear-gradient(135deg, hsl(175 60% 50%), hsl(190 85% 65%), hsl(200 95% 55%));
     
-    /* Shadows and Effects - Light Theme */
-    --shadow-heat: 0 10px 30px -5px hsl(18 95% 55% / 0.2);
-    --shadow-steel: 0 20px 40px -10px hsl(210 11% 30% / 0.1);
-    --shadow-glow: 0 0 20px hsl(18 95% 55% / 0.3);
-    --shadow-tech: 0 8px 25px -5px hsl(195 100% 50% / 0.2);
+    /* Water Effects */
+    --shadow-water: 0 10px 30px -5px hsl(217 91% 60% / 0.2);
+    --shadow-ocean: 0 20px 40px -10px hsl(220 70% 40% / 0.15);
+    --shadow-clean: 0 8px 25px -5px hsl(217 91% 60% / 0.1);
+    --shadow-ripple: 0 0 20px hsl(217 91% 60% / 0.3);
     
     /* Animation Variables */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -90,33 +90,38 @@
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
+    /* Dark Mode - Water Theme */
+    --background: 222 47% 11%;
     --foreground: 210 40% 98%;
 
-    --card: 222.2 84% 4.9%;
+    --card: 224 71% 4%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222.2 84% 4.9%;
+    --popover: 224 71% 4%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    /* Primary - Water Blue (same as light) */
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 217.2 32.6% 17.5%;
+    /* Secondary - Dark Blue Gray */
+    --secondary: 215 28% 17%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    /* Muted - Medium Gray */
+    --muted: 215 28% 17%;
+    --muted-foreground: 217 10% 64%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    /* Accent - Ocean Blue (same as light) */
+    --accent: 200 95% 55%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 63% 31%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 215 28% 17%;
+    --input: 215 28% 17%;
+    --ring: 217 91% 60%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -148,38 +153,38 @@
 }
 
 @layer components {
-  /* Heat Treatment Specific Components */
-  .heat-glow {
-    box-shadow: var(--shadow-heat);
-    background: var(--gradient-heat);
+  /* Water Theme Components */
+  .water-glow {
+    box-shadow: var(--shadow-water);
+    background: var(--gradient-water);
   }
 
-  .steel-plate {
-    background: var(--gradient-steel);
-    box-shadow: var(--shadow-steel);
+  .ocean-depth {
+    background: var(--gradient-ocean);
+    box-shadow: var(--shadow-ocean);
   }
 
-  .tech-glow {
-    box-shadow: var(--shadow-tech);
-    background: var(--gradient-tech);
+  .clean-surface {
+    box-shadow: var(--shadow-clean);
+    background: var(--gradient-clean);
   }
 
-  .chrome-finish {
-    background: var(--gradient-chrome);
-    box-shadow: 0 4px 15px -3px hsl(210 15% 75% / 0.2);
+  .aqua-finish {
+    background: var(--gradient-aqua);
+    box-shadow: 0 4px 15px -3px hsl(175 60% 50% / 0.2);
   }
 
-  /* Advanced Animation Classes */
-  .animate-heat-pulse {
-    animation: heat-pulse 2s infinite;
+  /* Animation Classes */
+  .animate-water-pulse {
+    animation: water-pulse 2s infinite;
   }
 
   .animate-float {
     animation: float 3s ease-in-out infinite;
   }
 
-  .animate-glow {
-    animation: glow 2s ease-in-out infinite alternate;
+  .animate-ripple {
+    animation: ripple 2s ease-in-out infinite alternate;
   }
 
   .animate-rotate-slow {
@@ -193,16 +198,16 @@
 
   .hover-lift:hover {
     transform: translateY(-8px);
-    box-shadow: var(--shadow-heat);
+    box-shadow: var(--shadow-water);
   }
 
-  .hover-glow {
+  .hover-ripple {
     transition: var(--transition-smooth);
   }
 
-  .hover-glow:hover {
-    box-shadow: var(--shadow-glow);
-    background: var(--gradient-heat);
+  .hover-ripple:hover {
+    box-shadow: var(--shadow-ripple);
+    background: var(--gradient-water);
   }
 
   /* Glass Morphism Effects - Light Theme */
@@ -221,22 +226,22 @@
 
 @layer utilities {
   /* Text Gradients */
-  .text-gradient-heat {
-    background: var(--gradient-heat);
+  .text-gradient-water {
+    background: var(--gradient-water);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
-  .text-gradient-steel {
-    background: var(--gradient-chrome);
+  .text-gradient-ocean {
+    background: var(--gradient-ocean);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
-  .text-gradient-tech {
-    background: var(--gradient-tech);
+  .text-gradient-aqua {
+    background: var(--gradient-aqua);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -244,12 +249,12 @@
 }
 
 /* Keyframe Animations */
-@keyframes heat-pulse {
+@keyframes water-pulse {
   0%, 100% {
-    box-shadow: 0 0 20px hsl(18 95% 55% / 0.3);
+    box-shadow: 0 0 20px hsl(217 91% 60% / 0.3);
   }
   50% {
-    box-shadow: 0 0 40px hsl(18 95% 55% / 0.6), 0 0 60px hsl(0 90% 45% / 0.3);
+    box-shadow: 0 0 40px hsl(217 91% 60% / 0.6), 0 0 60px hsl(200 95% 55% / 0.3);
   }
 }
 
@@ -262,12 +267,12 @@
   }
 }
 
-@keyframes glow {
+@keyframes ripple {
   from {
-    box-shadow: 0 0 20px hsl(18 95% 55% / 0.4);
+    box-shadow: 0 0 20px hsl(217 91% 60% / 0.4);
   }
   to {
-    box-shadow: 0 0 40px hsl(18 95% 55% / 0.8), 0 0 60px hsl(0 90% 45% / 0.4);
+    box-shadow: 0 0 40px hsl(217 91% 60% / 0.8), 0 0 60px hsl(200 95% 55% / 0.4);
   }
 }
 
